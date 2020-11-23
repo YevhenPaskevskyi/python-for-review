@@ -1,10 +1,12 @@
 from selenium import webdriver
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--incognito")
+browser = webdriver.Chrome(chrome_options = chrome_options)
 import time
 
 link = "http://suninjuly.github.io/simple_form_find_task.html"
 
 try:
-    browser = webdriver.Chrome()
     browser.get(link)
 
     input1 = browser.find_element_by_name("first_name")
